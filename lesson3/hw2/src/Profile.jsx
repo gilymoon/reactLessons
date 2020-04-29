@@ -10,7 +10,7 @@ const Profile = (props) => {
       </div>
       <div className="profile__birth">{`Was born ${formatDate(
         props.userData.birthDate
-      )} in ${props.userData.birthPlace} `}</div>
+      )} in ${props.userData.birthPlace}`}</div>
     </>
   );
 };
