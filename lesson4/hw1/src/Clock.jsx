@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import moment from "moment";
 import "./clock.scss";
 
-const formatDate = date => moment(date).format("LTS");
+//const formatDate = date => moment(date).format("LTS");
 
-const getTimeWithOffset = (offset) => {
+const getTimeWithOffset = offset => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset() / 60;
   return new Date(
@@ -18,12 +18,12 @@ class Clock extends Component {
 
     this.state = {
       location: props.location,
-      offset: getTimeWithOffset(props.offset),
+      offset: getTimeWithOffset(props.offset).toLocaleTimeString(),
     };
     //
     setInterval(() => {
       this.setState({
-        offset: this.state.offset.toLocaleTimeString(),
+        offset: this.state.offset,
       });
     }, 1000);
   }
