@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Colors extends Component {
+class ColorPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,4 +52,4 @@ class Colors extends Component {
   }
 }
 
-export default Colors;
+export default ColorPicker;
