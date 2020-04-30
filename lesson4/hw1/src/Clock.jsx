@@ -23,7 +23,7 @@ class Clock extends Component {
     //
     setInterval(() => {
       this.setState({
-        offset: this.state.offset,
+        offset: getTimeWithOffset(props.offset).toLocaleTimeString(),
       });
     }, 1000);
   }
