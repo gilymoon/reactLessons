@@ -5,7 +5,7 @@ class Toggler extends Component {
     super(props);
 
     this.state = {
-      text: "off",
+      text: "Off",
     }
 
    
@@ -13,9 +13,9 @@ class Toggler extends Component {
 
   toggler = () => {
     this.setState({
-      text: this.state.text === "off"
-      ? "on"
-      : "off"
+      text: this.state.text === "Off"
+      ? "On"
+      : "Off"
     })
   }
 
