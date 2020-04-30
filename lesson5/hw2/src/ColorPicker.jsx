@@ -23,23 +23,6 @@ class ColorPicker extends Component {
 
   render() {
     return (
-      // <div className="colors">
-      //   <button style={{
-      //     backgroundColor: RED,
-      //   }}
-      //   onClick={() => this.setBodyColor(RED)}
-      //   className="colors__button"/>
-      //   <button style={{
-      //     backgroundColor: GREEN,
-      //   }}
-      //   onClick={() => this.setBodyColor(GREEN)}
-      //   className="colors__button"/>
-      //   <button style={{
-      //     backgroundColor: BLUE,
-      //   }}
-      //   onClick={() => this.setBodyColor(BLUE)}
-      //   className="colors__button"/>
-      // </div>
       <div>
         <div class="picker__title">{`${this.state.text}`}</div>
         <div>
