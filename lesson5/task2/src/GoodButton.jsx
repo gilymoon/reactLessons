@@ -2,8 +2,7 @@ import React, { Component } from "react";
 
 class GoodButton extends Component {
 
-  handleClick(e){
-    console.log(e);
+  handleClick(){
     alert('Good job!');
   }
 
