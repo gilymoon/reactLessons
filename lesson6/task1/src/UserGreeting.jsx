@@ -1,7 +1,7 @@
 import React from 'react';
 
-const UserGreeting = props => {
-  return <h1>{`Hi User ;)`}</h1> 
-}
+const UserGreeting = () => {
+    return <h1>Hello, user 😎</h1>;
+};
 
 export default UserGreeting;
