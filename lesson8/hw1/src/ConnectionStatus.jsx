@@ -26,7 +26,7 @@ componentWillUnmount() {
 
   render() {
     const statusOnline = <div className="status">online</div>
-    const statusOffline = <div className="status_offline">offline</div>
+    const statusOffline = <div className="status status_offline">offline</div>
     return (
       this.state.status === 'online'
       ? statusOnline
