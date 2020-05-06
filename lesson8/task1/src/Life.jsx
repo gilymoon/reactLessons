@@ -11,8 +11,9 @@ class Life extends Component{
     console.log('componentDidMount: API calls, subscriptions')
   }
 
-  shouldComponentUpdate(prevProps, prevState){
+  shouldComponentUpdate(nextProps, nextState){
     console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render')
+    return this.props !== nextProps;
   }
 
   componentDidUpdate(prevProps, prevState){
