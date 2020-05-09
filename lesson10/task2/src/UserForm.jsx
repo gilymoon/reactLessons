@@ -1,24 +1,22 @@
 import React from "react";
 
-const UserForm = ({ userData, handleChange }) => {
-  return (
-    <form className="user-form">
-      <input
-        type="text"
-        name="firstName"
-        className="user-form__input"
-        value={userData.firstName}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="lastName"
-        className="user-form__input"
-        value={userData.lastName}
-        onChange={handleChange}
-      />
-    </form>
-  );
-};
+const UserForm = ({ firstName, lastName, handleChange }) => (
+  <form className="user-form">
+    <input
+      onChange={handleChange}
+      value={firstName}
+      type="text"
+      name="firstName"
+      className="user-form__input"
+    />
+    <input
+      onChange={handleChange}
+      value={lastName}
+      type="text"
+      name="lastName"
+      className="user-form__input"
+    />
+  </form>
+);
 
 export default UserForm;
