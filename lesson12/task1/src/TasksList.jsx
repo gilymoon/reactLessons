@@ -14,34 +14,29 @@ class TasksList extends Component {
   };
 
   componentDidMount() {
-    fetchTasksList();
+    this.fetchTasks();
   }
 
   fetchTasks = () => {
-    fetchTasksList().then((tasksList) =>
+    fetchTasksList().then((tasksList) => {
       this.setState({
         tasks: tasksList,
-      })
-    );
+      });
+    });
   };
 
   onCreate = (text) => {
-    //const { tasks } = this.state;
     const newTask = {
-      text,
+      text: text,
       done: false,
     };
-
-    createTask(newTask).then(() => this.fetchTasks());
-
-    // const updatedTasks = tasks.concat(newTask);
-    // this.setState({ tasks: updatedTasks });
+    createTask(newTask).then(this.fetchTasks());
   };
 
   handleTaskStatusChange = (id) => {
     const { done, text } = this.state.tasks.find((task) => task.id === id);
     const updatedTask = {
-      text,
+      ...text,
       done: !done,
     };
 
@@ -59,18 +54,19 @@ class TasksList extends Component {
       <div className="todo-list">
         <CreateTaskInput onCreate={this.onCreate} />
         <ul className="list">
-          {sortedList.map((task) => (
-            <Task
-              onDelete={this.handleTaskDelete}
-              key={task.id}
-              {...task}
-              onChange={this.handleTaskStatusChange}
-            />
-          ))}
+          {sortedList.map((task) => {
+            return (
+              <Task
+                key={task.id}
+                {...task}
+                onDelete={this.handleTaskDelete}
+                onChange={this.handleTaskStatusChange}
+              />
+            );
+          })}
         </ul>
       </div>
     );
   }
 }
-
 export default TasksList;
